@@ -16,7 +16,7 @@ function App() {
         <View className="App">
           <Card>
             <Image src={logo} className="App-logo" alt="logo" />
-            <Heading level={1}>We now have Auth!</Heading>
+            <Heading level={1}>You are now signed in! Good job you.</Heading>
           </Card>
           <Button onClick={signOut}>Sign Out</Button>
         </View>
