@@ -59,12 +59,12 @@ function LandingPage() {
       <View className="App">
         <Card>
           <Flex justifyContent={"center"}>
-            <Heading level={1} margin={".5em"} marginTop={"1em"}>
-              Falo fofo
+            <Heading level={1} margin={".4em"}>
+              falo fofo
             </Heading>
           </Flex>
           <Flex justifyContent={"center"}>
-            <img src={fofo} alt={'Fofo, a rabbit like creature'} width={'340em'} height={'500em'} style={{marginLeft: '2em'}}></img>
+            <img src={fofo} alt={'Fofo, a rabbit like creature'} width={'275em'} height={'425em'} style={{marginLeft: '2em'}}></img>
           </Flex>
         </Card>
         <Icons />
