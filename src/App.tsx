@@ -18,6 +18,7 @@ import {
 } from "phosphor-react";
 import { Backpack, KawaiiMood } from "react-kawaii";
 import { useState, useEffect, MouseEvent } from "react";
+import fofo from './assets/Fofo_Curious.png';
 
 function App() {
   return (
@@ -62,7 +63,7 @@ function LandingPage() {
             </Heading>
           </Flex>
           <Flex justifyContent={"center"}>
-            <Backpack size={200} mood={mood} color="#99F693" />
+            <img src={fofo} alt={'Fofo, a rabbit like creature'} width={400} height={500} style={{marginLeft: '1em'}}></img>
           </Flex>
         </Card>
         <Icons />
