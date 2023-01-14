@@ -70,9 +70,15 @@ function Icons() {
   return (
     <Card>
       <Flex justifyContent={"center"}>
-        <PinterestLogo size={48} color="#145d44" weight="duotone" />
-        <TiktokLogo size={48} color="#145d44" weight="duotone" />
-        <InstagramLogo size={48} color="#145d44" weight="duotone" />
+        <a href="https://www.pinterest.com">
+          <PinterestLogo size={48} color="#145d44" weight="duotone" />
+        </a>
+        <a href="https://www.tiktok.com/@falofofo">
+          <TiktokLogo size={48} color="#145d44" weight="duotone" />
+        </a>
+        <a href="https://www.instagram.com">
+          <InstagramLogo size={48} color="#145d44" weight="duotone" />
+        </a>
       </Flex>
     </Card>
   );
