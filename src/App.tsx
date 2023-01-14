@@ -10,7 +10,7 @@ import {
   Flex,
 } from "@aws-amplify/ui-react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { TiktokLogo, InstagramLogo, PinterestLogo } from "phosphor-react";
+import { TiktokLogo, InstagramLogo, PinterestLogo, Storefront } from "phosphor-react";
 import { Backpack, KawaiiMood } from "react-kawaii";
 import { useState, useEffect } from "react";
 
@@ -53,7 +53,7 @@ function LandingPage() {
       <View className="App">
         <Card>
           <Flex justifyContent={"center"}>
-            <Heading level={1}>Falo fofo</Heading>
+            <Heading level={1} margin={".5em"} marginTop={"20%"}>Falo fofo</Heading>
           </Flex>
           <Flex justifyContent={"center"}>
             <Backpack size={200} mood={mood} color="#99F693" />
@@ -67,9 +67,12 @@ function LandingPage() {
 
 function Icons() {
   return (
-    <Card>
+    <Card margin={".5em"}>
       <Flex justifyContent={"center"}>
-        <a href="https://www.pinterest.com">
+      <a href="https://www.teacherspayteachers.com/Store/Falofofo">
+          <Storefront size={48} color="#145d44" weight="duotone" />
+        </a>
+        <a href="https://www.pinterest.com/falofofo/">
           <PinterestLogo size={48} color="#145d44" weight="duotone" />
         </a>
         <a href="https://www.tiktok.com/@falofofo">
