@@ -16,9 +16,9 @@ import {
   PinterestLogo,
   Storefront,
 } from "phosphor-react";
-import { Backpack, KawaiiMood } from "react-kawaii";
-import { useState, useEffect, MouseEvent } from "react";
-import fofo from './assets/Fofo_Curious.png';
+// import { Backpack, KawaiiMood } from "react-kawaii";
+import { useState } from "react";
+import fofo from './assets/Fofo_Curious2.png';
 
 function App() {
   return (
@@ -34,6 +34,7 @@ function App() {
 }
 
 function LandingPage() {
+  /*
   const [mood, setMood] = useState<KawaiiMood>("blissful");
 
   useEffect(() => {
@@ -53,7 +54,7 @@ function LandingPage() {
     const timer = setTimeout(updateMood, 1000);
     return () => clearTimeout(timer);
   }, [mood]);
-
+*/
   return (
       <View className="App">
         <Card>
@@ -63,7 +64,7 @@ function LandingPage() {
             </Heading>
           </Flex>
           <Flex justifyContent={"center"}>
-            <img src={fofo} alt={'Fofo, a rabbit like creature'} width={400} height={500} style={{marginLeft: '1em'}}></img>
+            <img src={fofo} alt={'Fofo, a rabbit like creature'} width={'340em'} height={'500em'} style={{marginLeft: '2em'}}></img>
           </Flex>
         </Card>
         <Icons />
@@ -76,20 +77,30 @@ function Icons() {
   const [pinterestHovered, setPinterestHovered] = useState<boolean>(false);
   const [tiktokHovered, setTiktokHovered] = useState<boolean>(false);
   const [instagramHovered, setInstagramHovered] = useState<boolean>(false);
-  /*
-  const onMouseEnter = (event: MouseEvent<SVGSVGElement>) => {
-    setHovered((event as any).target.id);
-  };
-  const onMouseLeave = (event: MouseEvent<SVGSVGElement>) => {
-    setHovered('');
-  }
-  const getSize = (id: string) => {
-    if (hovered === id) {
-      return 70;
+
+  const setHoverState = (event: any, target?: string) => {
+    const hoverState = event?.type === 'mouseenter';
+
+    switch (target) {
+      case 'store':
+        setStoreHovered(hoverState);
+        break;
+      case 'pinterest':
+        setPinterestHovered(hoverState);
+        break;
+      case 'tiktok':
+        setTiktokHovered(hoverState);
+        break;
+      case 'instagram':
+        setInstagramHovered(hoverState);
+        break;
+      case 'default':
+        setStoreHovered(hoverState);
+        setPinterestHovered(hoverState);
+        setTiktokHovered(hoverState);
+        setInstagramHovered(hoverState);
     }
-    return 48;
-  };
-  */
+  } 
   return (
     <Card margin={".5em"}>
       <Flex justifyContent={"center"}>
@@ -100,8 +111,9 @@ function Icons() {
             size={storeHovered ? 70 : 48}
             color="#145d44"
             weight="duotone"
-            onMouseEnter={() => setStoreHovered(true)}
-            onMouseLeave={() => setStoreHovered(false)}
+            onMouseEnter={(e) => setHoverState(e, 'store')}
+            onMouseLeave={(e) => setHoverState(e, 'store')}
+            onClick={(e) => setHoverState(e)}
           />
           </div>
         </a>
@@ -112,8 +124,9 @@ function Icons() {
             size={pinterestHovered ? 70 : 48}
             color="#145d44"
             weight="duotone"
-            onMouseEnter={() => setPinterestHovered(true)}
-            onMouseLeave={() => setPinterestHovered(false)}
+            onMouseEnter={(e) => setHoverState(e, 'pinterest')}
+            onMouseLeave={(e) => setHoverState(e, 'pinterest')}
+            onClick={(e) => setHoverState(e)}
           />
           </div>
         </a>
@@ -124,8 +137,9 @@ function Icons() {
             size={tiktokHovered ? 70 : 48}
             color="#145d44"
             weight="duotone"
-            onMouseEnter={() => setTiktokHovered(true)}
-            onMouseLeave={() => setTiktokHovered(false)}
+            onMouseEnter={(e) => setHoverState(e, 'tiktok')}
+            onMouseLeave={(e) => setHoverState(e, 'tiktok')}
+            onClick={(e) => setHoverState(e)}
           />
           </div>
         </a>
@@ -136,8 +150,9 @@ function Icons() {
             size={instagramHovered ? 70 : 48}
             color="#145d44"
             weight="duotone"
-            onMouseEnter={() => setInstagramHovered(true)}
-            onMouseLeave={() => setInstagramHovered(false)}
+            onMouseEnter={(e) => setHoverState(e, 'instagram')}
+            onMouseLeave={(e) => setHoverState(e, 'instagram')}
+            onClick={(e) => setHoverState(e)}
           />
           </div>
         </a>
