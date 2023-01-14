@@ -10,9 +10,14 @@ import {
   Flex,
 } from "@aws-amplify/ui-react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { TiktokLogo, InstagramLogo, PinterestLogo, Storefront } from "phosphor-react";
+import {
+  TiktokLogo,
+  InstagramLogo,
+  PinterestLogo,
+  Storefront,
+} from "phosphor-react";
 import { Backpack, KawaiiMood } from "react-kawaii";
-import { useState, useEffect } from "react";
+import { useState, useEffect, MouseEvent } from "react";
 
 function App() {
   return (
@@ -49,11 +54,12 @@ function LandingPage() {
   }, [mood]);
 
   return (
-    <Flex justifyContent={"center"}>
       <View className="App">
         <Card>
           <Flex justifyContent={"center"}>
-            <Heading level={1} margin={".5em"} marginTop={"20%"}>Falo fofo</Heading>
+            <Heading level={1} margin={".5em"} marginTop={"1em"}>
+              Falo fofo
+            </Heading>
           </Flex>
           <Flex justifyContent={"center"}>
             <Backpack size={200} mood={mood} color="#99F693" />
@@ -61,25 +67,78 @@ function LandingPage() {
         </Card>
         <Icons />
       </View>
-    </Flex>
   );
 }
 
 function Icons() {
+  const [storeHovered, setStoreHovered] = useState<boolean>(false);
+  const [pinterestHovered, setPinterestHovered] = useState<boolean>(false);
+  const [tiktokHovered, setTiktokHovered] = useState<boolean>(false);
+  const [instagramHovered, setInstagramHovered] = useState<boolean>(false);
+  /*
+  const onMouseEnter = (event: MouseEvent<SVGSVGElement>) => {
+    setHovered((event as any).target.id);
+  };
+  const onMouseLeave = (event: MouseEvent<SVGSVGElement>) => {
+    setHovered('');
+  }
+  const getSize = (id: string) => {
+    if (hovered === id) {
+      return 70;
+    }
+    return 48;
+  };
+  */
   return (
     <Card margin={".5em"}>
       <Flex justifyContent={"center"}>
-      <a href="https://www.teacherspayteachers.com/Store/Falofofo">
-          <Storefront size={48} color="#145d44" weight="duotone" />
+        <a href="https://www.teacherspayteachers.com/Store/Falofofo">
+          <div style={{width: "3.1em"}}>
+          <Storefront
+            id="store"
+            size={storeHovered ? 70 : 48}
+            color="#145d44"
+            weight="duotone"
+            onMouseEnter={() => setStoreHovered(true)}
+            onMouseLeave={() => setStoreHovered(false)}
+          />
+          </div>
         </a>
         <a href="https://www.pinterest.com/falofofo/">
-          <PinterestLogo size={48} color="#145d44" weight="duotone" />
+        <div style={{width: "3.1em"}}>
+          <PinterestLogo
+            id="pinterest"
+            size={pinterestHovered ? 70 : 48}
+            color="#145d44"
+            weight="duotone"
+            onMouseEnter={() => setPinterestHovered(true)}
+            onMouseLeave={() => setPinterestHovered(false)}
+          />
+          </div>
         </a>
         <a href="https://www.tiktok.com/@falofofo">
-          <TiktokLogo size={48} color="#145d44" weight="duotone" />
+        <div style={{width: "3.1em"}}>
+          <TiktokLogo
+            id="tiktok"
+            size={tiktokHovered ? 70 : 48}
+            color="#145d44"
+            weight="duotone"
+            onMouseEnter={() => setTiktokHovered(true)}
+            onMouseLeave={() => setTiktokHovered(false)}
+          />
+          </div>
         </a>
         <a href="https://www.instagram.com/falofofo_eu/">
-          <InstagramLogo size={48} color="#145d44" weight="duotone" />
+        <div style={{width: "3.1em"}}>
+          <InstagramLogo
+            id="instagram"
+            size={instagramHovered ? 70 : 48}
+            color="#145d44"
+            weight="duotone"
+            onMouseEnter={() => setInstagramHovered(true)}
+            onMouseLeave={() => setInstagramHovered(false)}
+          />
+          </div>
         </a>
       </Flex>
     </Card>
