@@ -35,7 +35,6 @@ function LandingPage() {
       "blissful",
       "excited",
       "happy",
-      "ko",
       "lovestruck",
       "sad",
       "shocked",
@@ -54,10 +53,10 @@ function LandingPage() {
       <View className="App">
         <Card>
           <Flex justifyContent={"center"}>
-            <Heading level={1}>this is the landing page</Heading>
+            <Heading level={1}>Falo fofo</Heading>
           </Flex>
           <Flex justifyContent={"center"}>
-            <Backpack size={200} mood={mood} color="#FDA7DC" />
+            <Backpack size={200} mood={mood} color="#99F693" />
           </Flex>
         </Card>
         <Icons />
@@ -76,7 +75,7 @@ function Icons() {
         <a href="https://www.tiktok.com/@falofofo">
           <TiktokLogo size={48} color="#145d44" weight="duotone" />
         </a>
-        <a href="https://www.instagram.com">
+        <a href="https://www.instagram.com/falofofo_eu/">
           <InstagramLogo size={48} color="#145d44" weight="duotone" />
         </a>
       </Flex>
