@@ -16,9 +16,9 @@ import {
   PinterestLogo,
   Storefront,
 } from "phosphor-react";
-// import { Backpack, KawaiiMood } from "react-kawaii";
 import { useState } from "react";
-import fofo from './assets/Fofo_Curious2.png';
+// import fofo from './assets/Fofo_Curious2.png';
+import fofo from './assets/Fofo_Gif.gif';
 
 function App() {
   return (
@@ -34,27 +34,6 @@ function App() {
 }
 
 function LandingPage() {
-  /*
-  const [mood, setMood] = useState<KawaiiMood>("blissful");
-
-  useEffect(() => {
-    const moods: KawaiiMood[] = [
-      "blissful",
-      "excited",
-      "happy",
-      "lovestruck",
-      "sad",
-      "shocked",
-    ];
-    const updateMood = () => {
-      const currentIdx = moods.findIndex((listMood) => listMood === mood);
-      const nextIdx = currentIdx + 1 === moods.length ? 0 : currentIdx + 1;
-      setMood(moods[nextIdx]);
-    };
-    const timer = setTimeout(updateMood, 1000);
-    return () => clearTimeout(timer);
-  }, [mood]);
-*/
   return (
       <View className="App">
         <Card>
@@ -64,7 +43,7 @@ function LandingPage() {
             </Heading>
           </Flex>
           <Flex justifyContent={"center"}>
-            <img src={fofo} alt={'Fofo, a rabbit like creature'} width={'275em'} height={'425em'} style={{marginLeft: '2em'}}></img>
+            <img src={fofo} alt={'Fofo, a rabbit like creature'} width={'250em'} height={'400em'} style={{marginLeft: '2em'}}></img>
           </Flex>
         </Card>
         <Icons />
