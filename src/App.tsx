@@ -43,7 +43,7 @@ function LandingPage() {
             </Heading>
           </Flex>
           <Flex justifyContent={"center"}>
-            <img src={fofo} alt={'Fofo, a rabbit like creature'} width={'250em'} height={'400em'} style={{marginLeft: '2em'}}></img>
+            <img src={fofo} alt={'Fofo, a rabbit like creature'} width={'225em'} height={'375em'} style={{marginLeft: '2em'}}></img>
           </Flex>
         </Card>
         <Icons />
@@ -92,7 +92,7 @@ function Icons() {
             weight="duotone"
             onMouseEnter={(e) => setHoverState(e, 'store')}
             onMouseLeave={(e) => setHoverState(e, 'store')}
-            onClick={(e) => setHoverState(e)}
+            onTouchStart={(e) => setHoverState(e)}
           />
           </div>
         </a>
@@ -105,7 +105,7 @@ function Icons() {
             weight="duotone"
             onMouseEnter={(e) => setHoverState(e, 'pinterest')}
             onMouseLeave={(e) => setHoverState(e, 'pinterest')}
-            onClick={(e) => setHoverState(e)}
+            onTouchStart={(e) => setHoverState(e)}
           />
           </div>
         </a>
@@ -118,7 +118,7 @@ function Icons() {
             weight="duotone"
             onMouseEnter={(e) => setHoverState(e, 'tiktok')}
             onMouseLeave={(e) => setHoverState(e, 'tiktok')}
-            onClick={(e) => setHoverState(e)}
+            onTouchStart={(e) => setHoverState(e)}
           />
           </div>
         </a>
@@ -131,7 +131,7 @@ function Icons() {
             weight="duotone"
             onMouseEnter={(e) => setHoverState(e, 'instagram')}
             onMouseLeave={(e) => setHoverState(e, 'instagram')}
-            onClick={(e) => setHoverState(e)}
+            onTouchStart={(e) => setHoverState(e)}
           />
           </div>
         </a>
